@@ -42,7 +42,7 @@ delimiter $
 create trigger checkInsert before insert on student_new for each row
 BEGIN
 	if dayname(curdate())="Wednesday" then
-	signal sqlstate '42000' set message_text="it's sunday";
+	signal sqlstate '42000' set msg_text="it's sunday";
 	end if;
 end $
 delimiter ;
